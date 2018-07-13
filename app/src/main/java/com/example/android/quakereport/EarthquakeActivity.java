@@ -48,19 +48,19 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
             }
         });
 
-        Log.e(LOG_TAG, "Init loader");
+        Log.i(LOG_TAG, "Init loader");
         getLoaderManager().initLoader(0, null, this);
     }
 
     @Override
     public Loader<List<Earthquake>> onCreateLoader(int id, Bundle args) {
-        Log.e(LOG_TAG, "OnCreateLoader");
+        Log.i(LOG_TAG, "OnCreateLoader");
         return new EarthquakeLoader(EarthquakeActivity.this, USGS_REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> data) {
-        Log.e(LOG_TAG, "onLoadFinished");
+        Log.i(LOG_TAG, "onLoadFinished");
         mAdapter.clear();
         if(data != null && !data.isEmpty())
             mAdapter.addAll(data);
@@ -69,7 +69,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
 
     @Override
     public void onLoaderReset(Loader<List<Earthquake>> loader) {
-        Log.e(LOG_TAG, "onLoaderReset");
+        Log.i(LOG_TAG, "onLoaderReset");
         mAdapter.clear();
     }
 }

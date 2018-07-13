@@ -17,13 +17,13 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>>{
 
     @Override
     protected void onStartLoading() {
-        Log.e(LOG_TAG, "onStartLoading");
+        Log.i(LOG_TAG, "onStartLoading");
         forceLoad();
     }
 
     @Override
     public List<Earthquake> loadInBackground() {
-        Log.e(LOG_TAG, "loadInBackground");
+        Log.i(LOG_TAG, "loadInBackground");
         if(mUrl == null) {
             return null;
         }
